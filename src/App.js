@@ -1,22 +1,69 @@
-import logo from './logo.svg';
+
+// Imports
+import React from "react";
 import './App.css';
-import UserListing from './components/UserListing';
+class App extends React.Component {
 
-function App() {
-  var student1= {name:"smit", age:21, city:"mumbai"}
+	// Constructor
+	constructor(props) {
+		super(props);
 
-  function showData() {
-    alert("Patient Management Database");
-  }
+		this.state = {
+			items: [],
+			DataisLoaded: false
+		};
+	}
 
+	// ComponentDidMount is used to
+	// execute the code
+	componentDidMount() {
+		fetch(
+"https://trial-final.onrender.com/patients")
+			.then((res) => res.json())
+			.then((json) => {
+				this.setState({
+					items: json,
+					DataisLoaded: true
+				});
+			})
+	}
+	render() {
+		const { DataisLoaded, items } = this.state;
+		if (!DataisLoaded) return <div>
+			<h1> Pleses wait some time.... </h1> </div> ;
 
+		return (
+		
 
-  return (
-    <>
-      <h1>From App Component</h1>
-      <UserListing/>
-    </>
-  );
+    <div className="App">
+      <h1>PATIENT-MANAGEMENT-SYSTEM-- ABHISHEK NAIDU - 20-CIVILA48-24</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Ward</th>
+            <th>Blood Type</th>
+            <th>Disease</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((item) => (
+            <tr key={item.id}>
+              <td>{item.id}</td>
+              <td>{item.name}</td>
+              <td>{item.age}</td>
+              <td>{item.ward}</td>
+              <td>{item.bloodType}</td>
+              <td>{item.disease}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+	);
+}
 }
 
 export default App;
