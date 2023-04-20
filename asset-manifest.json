@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Tect_react-app/static/css/main.c29baf17.css",
+    "main.js": "/Tect_react-app/static/js/main.e42f7ba4.js",
+    "static/js/787.bc7d429a.chunk.js": "/Tect_react-app/static/js/787.bc7d429a.chunk.js",
+    "index.html": "/Tect_react-app/index.html",
+    "main.c29baf17.css.map": "/Tect_react-app/static/css/main.c29baf17.css.map",
+    "main.e42f7ba4.js.map": "/Tect_react-app/static/js/main.e42f7ba4.js.map",
+    "787.bc7d429a.chunk.js.map": "/Tect_react-app/static/js/787.bc7d429a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c29baf17.css",
+    "static/js/main.e42f7ba4.js"
+  ]
+}
